@@ -77,33 +77,33 @@ class ClimberViewModel: ObservableObject {
                 )
             ]
         )
-//        "everest": (
-//            name: "Mount Everest",
-//            nativeNames: ["珠穆朗玛 (Chinese)","सगरमाथा (Nepali)","ཇོ་མོ་གླང་མ (Tibetan)"],
-//            elevation: 8848.86,
-//            prominence: 8848.86,
-//            isolation: 40008000,
-//            coordinates: CLLocationCoordinate2D(latitude: CLLocationDegrees(36.578581), longitude: CLLocationDegrees(-118.291995)), // TODO
-//            location: "Nepal and China",
-//            range: "Mahalangur Himal, Himalayas",
-//            routes: [
-//                "southeastRidge": (
-//                    name: "Southeast ridge",
-//                    stops: [
-//                        ("Bay of Bengal", 0),
-//                        ("Kathmandu", 1400),
-//                        ("Lukla", 2860),
-//                        ("Namche Bazaar", 3440),
-//                        ("Base Camp", 5380),
-//                        ("Khumbu Icefall", 5486),
-//                        ("Camp I", 6065),
-//                        ("Western Cwm", 6100),
-//                        ("Camp II (Advanced Base Camp)", 6500),
-//                        ...
-//                    ]
-//                )
-//            ]
-//        )
+        //        "everest": (
+        //            name: "Mount Everest",
+        //            nativeNames: ["珠穆朗玛 (Chinese)","सगरमाथा (Nepali)","ཇོ་མོ་གླང་མ (Tibetan)"],
+        //            elevation: 8848.86,
+        //            prominence: 8848.86,
+        //            isolation: 40008000,
+        //            coordinates: CLLocationCoordinate2D(latitude: CLLocationDegrees(36.578581), longitude: CLLocationDegrees(-118.291995)), // TODO
+        //            location: "Nepal and China",
+        //            range: "Mahalangur Himal, Himalayas",
+        //            routes: [
+        //                "southeastRidge": (
+        //                    name: "Southeast ridge",
+        //                    stops: [
+        //                        ("Bay of Bengal", 0),
+        //                        ("Kathmandu", 1400),
+        //                        ("Lukla", 2860),
+        //                        ("Namche Bazaar", 3440),
+        //                        ("Base Camp", 5380),
+        //                        ("Khumbu Icefall", 5486),
+        //                        ("Camp I", 6065),
+        //                        ("Western Cwm", 6100),
+        //                        ("Camp II (Advanced Base Camp)", 6500),
+        //                        ...
+        //                    ]
+        //                )
+        //            ]
+        //        )
     ]
     
     // MARK: - Health Data
@@ -188,7 +188,7 @@ class ClimberViewModel: ObservableObject {
         healthStore.execute(query)
     }
     
-    // MARK: Access to model
+    // MARK: - Access to model
     var name: String {climber.mountain.name}
     var nativeNames: [String] {climber.mountain.nativeNames}
     var elevation: Double {climber.mountain.elevation}
@@ -199,6 +199,6 @@ class ClimberViewModel: ObservableObject {
     var routes: [String : (name: String, stops: [(name: String, elevation: Double)])] {climber.mountain.routes}
     var numFlightsClimbed: UInt {climber.flightsClimbed}
     
-    // MARK: Intents
-    //func fetchHealthData() { climber.getFlightsClimbed() }
+    // MARK: - Intents
+    func createClimber() { climber = ClimberViewModel.createClimber() }
 }

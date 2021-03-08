@@ -11,6 +11,8 @@
 		6955E82D25B63495007898C4 /* ClimberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6955E82C25B63495007898C4 /* ClimberView.swift */; };
 		6955E82F25B63496007898C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6955E82E25B63496007898C4 /* Assets.xcassets */; };
 		6955E83225B63496007898C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6955E83125B63496007898C4 /* Preview Assets.xcassets */; };
+		6998214425F5F126009A0DD5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6998214325F5F126009A0DD5 /* OnboardingView.swift */; };
+		6998214725F60EC4009A0DD5 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6998214625F60EC4009A0DD5 /* ViewRouter.swift */; };
 		69ABBE9A25B634D2000B0303 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 69ABBE9925B634D2000B0303 /* README.md */; };
 		69ABBE9D25B634DC000B0303 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 69ABBE9C25B634DC000B0303 /* .gitignore */; };
 		69ABBEA325B66B12000B0303 /* Climber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ABBEA225B66B12000B0303 /* Climber.swift */; };
@@ -25,6 +27,8 @@
 		6955E82E25B63496007898C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6955E83125B63496007898C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6955E83325B63496007898C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6998214325F5F126009A0DD5 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		6998214625F60EC4009A0DD5 /* ViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		69ABBE9925B634D2000B0303 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		69ABBE9C25B634DC000B0303 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		69ABBEA225B66B12000B0303 /* Climber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Climber.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				69ABBEAA25B66BE5000B0303 /* Climber.entitlements */,
 				6955E82A25B63495007898C4 /* ClimberApp.swift */,
 				6955E82C25B63495007898C4 /* ClimberView.swift */,
+				6998214325F5F126009A0DD5 /* OnboardingView.swift */,
+				6998214625F60EC4009A0DD5 /* ViewRouter.swift */,
 				69ABBEA525B66B79000B0303 /* ClimberViewModel.swift */,
 				69ABBEA225B66B12000B0303 /* Climber.swift */,
 				6955E82E25B63496007898C4 /* Assets.xcassets */,
@@ -169,6 +175,8 @@
 				6955E82D25B63495007898C4 /* ClimberView.swift in Sources */,
 				69ABBEA325B66B12000B0303 /* Climber.swift in Sources */,
 				6955E82B25B63495007898C4 /* ClimberApp.swift in Sources */,
+				6998214725F60EC4009A0DD5 /* ViewRouter.swift in Sources */,
+				6998214425F5F126009A0DD5 /* OnboardingView.swift in Sources */,
 				69ABBEA625B66B79000B0303 /* ClimberViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
