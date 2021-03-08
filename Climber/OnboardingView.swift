@@ -59,7 +59,7 @@ struct OnboardingPage: View {
         VStack {
             Text(title)
                 .font(.largeTitle)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .fontWeight(.bold)
             
             Spacer()
         }
@@ -73,7 +73,7 @@ struct LastOnboardingPage: View {
         VStack {
             Text("Ready to climb?")
                 .font(.largeTitle)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .fontWeight(.bold)
             
             Spacer()
             

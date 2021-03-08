@@ -23,7 +23,7 @@ struct ClimberView: View {
                 }
                 
                 ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
-                    RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                    RoundedRectangle(cornerRadius: 25.0)
                         .foregroundColor(Color(UIColor.secondarySystemFill))
                     VStack {
                         Image(systemName: "applelogo")
