@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ClimberView: View {
+    @ObservedObject var climber: ClimberViewModel
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 HStack {
-                    Text("Mount Everest")
+                    Text("\(climber.name)")
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                     Spacer()
@@ -29,12 +30,17 @@ struct ClimberView: View {
                             .resizable()
                             .redacted(reason: .placeholder)
                             .frame(width: nil, height: 200, alignment: .center)
-                        Text("24,050 ft of 29,035 ft")
+                        Text("\(climber.numFlightsClimbed * 10) of \(Int(climber.elevation.rounded())) m")
                             .fontWeight(.bold)
+                        Text("\(climber.numFlightsClimbed) of \(Int(climber.elevation.rounded() / 3)) flights")
                         
                     }.padding()
                 }
                 
+                Text("Fetch Data")
+                    .onTapGesture {
+                        climber.getFlightsClimbed()
+                    }
             }.padding()
         }
     }
@@ -42,6 +48,6 @@ struct ClimberView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ClimberView()
+        ClimberView(climber: ClimberViewModel())
     }
 }

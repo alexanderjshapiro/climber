@@ -11,7 +11,7 @@ import SwiftUI
 struct ClimberApp: App {
     var body: some Scene {
         WindowGroup {
-            ClimberView()
+            ClimberView(climber: ClimberViewModel())
         }
     }
 }
