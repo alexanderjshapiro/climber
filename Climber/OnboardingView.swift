@@ -18,7 +18,10 @@ struct OnboardingView: View {
                 OnboardingPage(title: "Page 3")
                 OnboardingPage(title: "Page 4")
                 LastOnboardingPage(viewSelector: viewSelector)
-            }.padding(.horizontal).padding(.vertical, 60)
+                
+            }
+            .padding(.horizontal)
+            .padding(.vertical, 60)
         }
         .tabViewStyle(PageTabViewStyle())
         .background(
@@ -75,20 +78,27 @@ struct LastOnboardingPage: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
-            Spacer()
+            Spacer().layoutPriority(1)
             
             Button(action: {
                 UserDefaults.standard.set(true, forKey: "didCompleteOnboarding")
                 viewSelector.segueToClimberView()
             }) {
-                Text("Let's go!")
-                    .font(.title3)
-                    .fontWeight(.bold)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10).foregroundColor(.blue)
+                    Text("Let's go!")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .padding()
+                }
             }
-            .frame(maxWidth: .infinity)
-            .padding()
             .foregroundColor(.white)
-            .background(Rectangle().foregroundColor(.blue).cornerRadius(10))
         }
+    }
+}
+
+struct OnboardingView_Previews: PreviewProvider {
+    static var previews: some View {
+        OnboardingView(viewSelector: ViewSelector())
     }
 }

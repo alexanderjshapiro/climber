@@ -10,27 +10,29 @@ import HealthKit
 import CoreLocation
 
 class ClimberViewModel: ObservableObject {
-    @Published private var climber = ClimberViewModel.createClimber()
+    @Published private var climber = ClimberViewModel.createClimber(mountain: "default", route: "default", difficulty: "default")
     
-    private static func createClimber() -> Climber {
-        return Climber(mountain: mountains["default"]!)
+    private static func createClimber(mountain: String, route: String, difficulty d: String) -> Climber {
+        let m = mountains[mountain] ?? mountains["default"]!
+        let r = mountains[mountain]?.routes[route] ?? mountains["default"]!.routes["default"]!
+        return Climber(mountain: m, route: r, difficulty: d)
     }
     
     // MARK: - Mountain Data
     static let mountains = [
         "default": (
-            name: "None",
-            nativeNames: ["None"],
-            elevation: 0.0,
-            prominence: 0.0,
-            isolation: 0.0,
-            coordinates: CLLocationCoordinate2D(latitude: CLLocationDegrees(0.0), longitude: CLLocationDegrees(0.0)),
-            location: "None",
+            name: nil,
+            nativeNames: nil,
+            elevation: nil,
+            prominence: nil,
+            isolation: nil,
+            coordinates: nil,
+            location: nil,
             routes: [
-                "none": (
-                    name: "None",
+                "default": (
+                    name: nil,
                     stops: [
-                        (name: "None", elevation: 0.0),
+                        (name: nil, elevation: nil),
                     ]
                 )
             ]
@@ -189,16 +191,11 @@ class ClimberViewModel: ObservableObject {
     }
     
     // MARK: - Access to model
-    var name: String {climber.mountain.name}
-    var nativeNames: [String] {climber.mountain.nativeNames}
-    var elevation: Double {climber.mountain.elevation}
-    var prominence: Double {climber.mountain.prominence}
-    var isolation: Double {climber.mountain.isolation}
-    var coordinates: CLLocationCoordinate2D {climber.mountain.coordinates}
-    var location: String {climber.mountain.location}
-    var routes: [String : (name: String, stops: [(name: String, elevation: Double)])] {climber.mountain.routes}
+    var newClimberStep: UInt { climber.newClimberStep }
+    var mountain: (name: String?, nativeNames: [String]?, elevation: Double?, prominence: Double?, isolation: Double?, coordinates: CLLocationCoordinate2D?, location: String?, routes: [String : (name: String?, stops: [(name: String?, elevation: Double?)])]) { climber.mountain }
     var numFlightsClimbed: UInt {climber.flightsClimbed}
     
     // MARK: - Intents
-    func createClimber() { climber = ClimberViewModel.createClimber() }
+    func changeNewClimberToStep(_ step: UInt) { climber.newClimberStep = step }
+    func createClimber(mountain m: String, route r: String, difficulty d: String) { climber = ClimberViewModel.createClimber(mountain: m, route: r, difficulty: d) }
 }

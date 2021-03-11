@@ -11,7 +11,7 @@ class ViewSelector: ObservableObject {
     @Published var currentPage: String
     
     init() {
-        // Reset onboarding key
+        // Manually set onboarding key
         // UserDefaults.standard.set(false, forKey: "didCompleteOnboarding")
         
         if !UserDefaults.standard.bool(forKey: "didCompleteOnboarding") {
@@ -35,12 +35,5 @@ struct ViewRouter: View {
         } else {
             ClimberView(climber: ClimberViewModel())
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ClimberView(climber: ClimberViewModel())
-        OnboardingView(viewSelector: ViewSelector())
     }
 }
