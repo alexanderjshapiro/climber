@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardingView: View {
     var viewSelector: ViewSelector
-    
+
     var body: some View {
         TabView {
             Group {
@@ -18,7 +18,7 @@ struct OnboardingView: View {
                 OnboardingPage(title: "Page 3")
                 OnboardingPage(title: "Page 4")
                 LastOnboardingPage(viewSelector: viewSelector)
-                
+
             }
             .padding(.horizontal)
             .padding(.vertical, 60)
@@ -39,9 +39,9 @@ struct FirstOnboardingPage: View {
             Text("Welcome to Climber!")
                 .font(.largeTitle)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-            
+
             Spacer()
-            
+
             Text("Swipe to continue →")
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity)
@@ -53,17 +53,17 @@ struct FirstOnboardingPage: View {
 
 struct OnboardingPage: View {
     var title: String
-    
+
     init(title: String) {
         self.title = title
     }
-    
+
     var body: some View {
         VStack {
             Text(title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-            
+
             Spacer()
         }
     }
@@ -71,15 +71,15 @@ struct OnboardingPage: View {
 
 struct LastOnboardingPage: View {
     var viewSelector: ViewSelector
-    
+
     var body: some View {
         VStack {
             Text("Ready to climb?")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-            
+
             Spacer().layoutPriority(1)
-            
+
             Button(action: {
                 UserDefaults.standard.set(true, forKey: "didCompleteOnboarding")
                 viewSelector.segueToClimberView()

@@ -42,10 +42,10 @@ struct ClimberView: View {
                             Text("\(climber.numFlightsClimbed * 10) of \(Int(climber.mountain.elevation?.rounded() ?? 0)) m")
                                 .fontWeight(.bold)
                             Text("\(climber.numFlightsClimbed) of \(Int(climber.mountain.elevation?.rounded() ?? 0 / 3)) flights")
-                            
+
                         }.padding()
                     }
-                    
+
                     Text("Fetch Data")
                         .onTapGesture {
                             climber.getFlightsClimbed()

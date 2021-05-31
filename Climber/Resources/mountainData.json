@@ -1,0 +1,50 @@
+{
+    "id": 1001
+    "name": "Mount Everest",
+    "otherNames": ["珠穆朗玛 {Chinese}","सगरमाथा {Nepali}","ཇོ་མོ་གླང་མ {Tibetan}"],
+    "elevation": 8848.86,
+    "prominence": 8848.86,
+    "isolation": 40008000,
+    "location": "Nepal and China",
+    "range": "Mahalangur Himal, Himalayas",
+    "routes": {
+        "name": "Southeast Ridge",
+        "stops": {
+            {
+                "name": "Bay of Bengal",
+                "elevation": 0},
+            {
+                "name": "Kathmandu",
+                "elevation": 1400
+            },
+            {
+                "name": "Lukla",
+                "elevation": 2860
+            },
+            {
+                "name": "Namche Bazaar",
+                "elevation": 3440
+            },
+            {
+                "name": "Base Camp",
+                "elevation": 5380
+            },
+            {
+                "name": "Khumbu Icefall",
+                "elevation": 5486
+            },
+            {
+                "name": "Camp I",
+                "elevation": 6065
+            },
+            {
+                "name": "Western Cwm",
+                "elevation": 6100
+            },
+            {
+                "name": "Camp II (Advanced Base Camp)",
+                "elevation": 6500
+            }
+        }
+    }
+}
