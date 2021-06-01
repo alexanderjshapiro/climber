@@ -5,14 +5,19 @@
 //  Created by Alexander Shapiro on 5/31/21.
 //
 
-import Foundation
+import SwiftUI
 import HealthKit
 
 struct Profile {
+    var name: String
     var username: String
     
+    private var imageName: String?
+    var image: Image {
+        (imageName != nil) ? Image(imageName!) : Image(systemName: "person.crop.circle")
+    }
     
-    static let `default` = Profile(username: "jappleseed")
+    static let `default` = Profile(name: "First Last", username: "username")
     
     // MARK: - Health Data
     // Setting Up HealthKit
