@@ -19,12 +19,16 @@ struct ClimberView: View {
             
             ProfileButton(profile: modelData.profile)
         }
-        .bottomSheet(bottomSheetPosition: $bottomSheetPosition, headerContent: {
-            SummaryView()
-        }, mainContent: {
-            InfoView()
-                .opacity(bottomSheetPosition == BottomSheetPosition.bottom ? 0 : 1)
-        })
+        .bottomSheet(
+            bottomSheetPosition: $bottomSheetPosition,
+            headerContent: {
+                SummaryView()
+            },
+            mainContent: {
+                InfoView()
+                    .opacity(bottomSheetPosition == BottomSheetPosition.bottom ? 0 : 1)
+            }
+        )
     }
 }
 
