@@ -91,17 +91,9 @@ struct MountainsListView: View {
             
             List(searchResults) { mountain in
                 NavigationLink(destination: MountainDetailView(mountain: mountain)) {
-                    HStack {
-                        Text(mountain.name)
-                            .font(.title)
-                            .fontWeight(.bold)
-                        
-                        Spacer()
-                        
-                        Text("\(UInt(mountain.elevation)) m")
-                    }
+                    MountainsRowView(mountain: mountain)
                 }
-            }
+            }.animation(.easeInOut)
         }
     }
 }

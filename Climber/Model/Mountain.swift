@@ -15,6 +15,7 @@ struct Mountain: Hashable, Codable, Identifiable {
 //    var description: String
     
     var elevation: Double
+    var route: String
 //    var prominence: Double
 //    var isolation: Double
 //
@@ -45,5 +46,5 @@ struct Mountain: Hashable, Codable, Identifiable {
 //        var name: String
 //        var elevation: Double
 //    }
-    static let `default` = Mountain(id: UInt.max, name: "Mountain Name", elevation: 1234.56)
+    static let `default` = Mountain(id: UInt.max, name: "Mount Example", elevation: 12345.67,  route: "Example Route")
 }

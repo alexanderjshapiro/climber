@@ -16,5 +16,83 @@
         "name": "Grand Teton",
         "elevation": 4199,
         "route": "Owen-Spalding Route"
+    },
+    {
+        "id": 4,
+        "name": "Mauna Kea",
+        "elevation": 4207.3,
+        "route": "Mauna Kea Trail"
+    },
+    {
+        "id": 5,
+        "name": "Mount Rainier",
+        "elevation": 4392,
+        "route": "Disappointment Cleaver Route"
+    },
+    {
+        "id": 6,
+        "name": "Mount Shasta",
+        "elevation": 4322,
+        "route": "Avalanche Gulch Route"
+    },
+    {
+        "id": 7,
+        "name": "K2",
+        "elevation": 8610,
+        "route": "Abruzzi Spur Route"
+    },
+    {
+        "id": 8,
+        "name": "Mauna Loa",
+        "elevation": 4169,
+        "route": "from Saddle Road"
+    },
+    {
+        "id": 9,
+        "name": "Mount Everest",
+        "elevation": 8848.86,
+        "route": "Southeast Ridge Route"
+    },
+    {
+        "id": 10,
+        "name": "Aconcagua",
+        "elevation": 6960.8,
+        "route": "Aconcagua Summit Route"
+    },
+    {
+        "id": 11,
+        "name": "Mount Kilimanjaro",
+        "elevation": 5895,
+        "route": "Rongai Route"
+    },
+    {
+        "id": 12,
+        "name": "Mount Elbrus",
+        "elevation": 5642,
+        "route": "Southern Slope Route"
+    },
+    {
+        "id": 13,
+        "name": "Vinson Massif",
+        "elevation": 4892,
+        "route": "from the Branscomb Glacier"
+    },
+    {
+        "id": 14,
+        "name": "Puncak Jaya",
+        "elevation": 4884,
+        "route": "North Face Route"
+    },
+    {
+        "id": 15,
+        "name": "Mont Blanc",
+        "elevation": 4808,
+        "route": "Goûter Route"
+    },
+    {
+        "id": 16,
+        "name": "Mount Kosciuszko",
+        "elevation": 2228,
+        "route": "from Charlotte Pass"
     }
 ]
