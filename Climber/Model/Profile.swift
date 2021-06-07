@@ -17,6 +17,8 @@ struct Profile {
         (imageName != nil) ? Image(imageName!) : Image(systemName: "person.crop.circle")
     }
     
+    var climb: Climb?
+    
     static let `default` = Profile(name: "First Last", username: "username")
     
     // MARK: - Health Data

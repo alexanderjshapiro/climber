@@ -21,12 +21,19 @@ struct ClimberView: View {
         }
         .bottomSheet(
             bottomSheetPosition: $bottomSheetPosition,
+            options: [.notResizeable],
             headerContent: {
-                SummaryView()
+                if (modelData.profile.climb != nil) {
+                    SummaryView()
+                } else {
+                    NewClimbButton(profile: modelData.profile)
+                }
             },
             mainContent: {
-                InfoView()
-                    .opacity(bottomSheetPosition == BottomSheetPosition.bottom ? 0 : 1)
+                if (modelData.profile.climb != nil) {
+                    DetailsView()
+                        .opacity(bottomSheetPosition == BottomSheetPosition.bottom ? 0 : 1)
+                }
             }
         )
     }
@@ -47,6 +54,34 @@ struct ProfileButton: View {
                 .padding()
                 .sheet(isPresented: $isShowingProfileSheet) {
                     ProfileSheetView(profile: profile, isShowingProfileSheet: $isShowingProfileSheet)
+                }
+            }
+            Spacer()
+        }
+    }
+}
+
+struct NewClimbButton: View {
+    var profile: Profile
+    @State private var isShowingNewClimbSheet = false
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Button(action: { isShowingNewClimbSheet.toggle() }) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(.accentColor)
+                        Text("New Climb")
+                            .font(.title3)
+                            .foregroundColor(.primary)
+                            .fontWeight(.bold)
+                            .padding()
+                    }
+                }
+                .sheet(isPresented: $isShowingNewClimbSheet) {
+                    NewClimbView()
                 }
             }
             Spacer()

@@ -1,5 +1,5 @@
 //
-//  InfoView.swift
+//  DetailsView.swift
 //  Climber
 //
 //  Created by Alexander Shapiro on 5/31/21.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct InfoView: View {
+struct DetailsView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
-            InfoSection(title: "Current Stage", showSeeAll: true) {
+            DetailSection(title: "Current Stage", showSeeAll: true) {
                 ZStack {
                     Rectangle()
                         .foregroundColor(.gray)
@@ -19,7 +19,7 @@ struct InfoView: View {
                 }
             }
             
-            InfoSection(title: "Quick Facts", showSeeAll: false) {
+            DetailSection(title: "Quick Facts", showSeeAll: false) {
                 ZStack {
                     Rectangle()
                         .foregroundColor(.gray)
@@ -34,7 +34,7 @@ struct InfoView: View {
     }
 }
 
-struct InfoSection<Content: View>: View {
+struct DetailSection<Content: View>: View {
     var title: String
     var showSeeAll: Bool
     var content: Content
@@ -69,8 +69,8 @@ struct InfoSection<Content: View>: View {
     }
 }
 
-struct InfoView_Previews: PreviewProvider {
+struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoView()
+        DetailsView()
     }
 }

@@ -1,3 +1,3 @@
-[submodule "Climber/Views/Sheet/BottomView"]
-	path = Climber/Views/Sheet/BottomView
+[submodule "Climber/Views/Info/BottomSheet"]
+	path = Climber/Views/Info/BottomSheet
 	url = git@github.com:alexanderjshapiro/BottomSheet.git
