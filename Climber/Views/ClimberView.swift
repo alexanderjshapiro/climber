@@ -14,28 +14,31 @@ struct ClimberView: View {
     
     
     var body: some View {
-        ZStack {
-            ClimberBackgroundView()
-            
-            ProfileButton(profile: modelData.profile)
-        }
-        .bottomSheet(
-            bottomSheetPosition: $bottomSheetPosition,
-            options: [.notResizeable],
-            headerContent: {
-                if (modelData.profile.climb != nil) {
-                    SummaryView()
-                } else {
-                    NewClimbButton(profile: modelData.profile)
-                }
-            },
-            mainContent: {
-                if (modelData.profile.climb != nil) {
-                    DetailsView()
-                        .opacity(bottomSheetPosition == BottomSheetPosition.bottom ? 0 : 1)
-                }
+        NavigationView {
+            ZStack {
+                ClimberBackgroundView()
+                
+                ProfileButton(profile: modelData.profile)
             }
-        )
+            .bottomSheet(
+                bottomSheetPosition: $bottomSheetPosition,
+                options: [.notResizeable],
+                headerContent: {
+                    if (modelData.profile.climb != nil) {
+                        SummaryView()
+                    } else {
+                        NewClimbButton(modelData: modelData)
+                    }
+                },
+                mainContent: {
+                    if (modelData.profile.climb != nil) {
+                        DetailsView()
+                            .opacity(bottomSheetPosition == BottomSheetPosition.bottom ? 0 : 1)
+                    }
+                }
+            )
+            .navigationBarHidden(true)
+        }
     }
 }
 
@@ -62,14 +65,13 @@ struct ProfileButton: View {
 }
 
 struct NewClimbButton: View {
-    var profile: Profile
-    @State private var isShowingNewClimbSheet = false
+    var modelData: ModelData
     
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                Button(action: { isShowingNewClimbSheet.toggle() }) {
+                NavigationLink(destination: NewClimbView(modelData: modelData)) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(.accentColor)
@@ -79,9 +81,6 @@ struct NewClimbButton: View {
                             .fontWeight(.bold)
                             .padding()
                     }
-                }
-                .sheet(isPresented: $isShowingNewClimbSheet) {
-                    NewClimbView()
                 }
             }
             Spacer()

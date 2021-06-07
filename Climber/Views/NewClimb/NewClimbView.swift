@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct NewClimbView: View {
-    @State private var selection: Tab = .featured
+    var modelData: ModelData
+    @State private var selection: Tab = .list
     
     enum Tab {
         case featured
@@ -23,17 +24,18 @@ struct NewClimbView: View {
                 }
                 .tag(Tab.featured)
             
-            MountainsListView()
+            MountainsListView(modelData: modelData)
                 .tabItem {
                     Label("List", systemImage: "list.bullet")
                 }
                 .tag(Tab.list)
         }
+        .navigationBarTitle(Text("Select a Mountain"), displayMode: .inline)
     }
 }
 
 struct NewClimbView_Previews: PreviewProvider {
     static var previews: some View {
-        NewClimbView()
+        NewClimbView(modelData: ModelData())
     }
 }

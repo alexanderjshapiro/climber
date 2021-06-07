@@ -9,17 +9,17 @@ import SwiftUI
 import CoreLocation
 
 struct Mountain: Hashable, Codable, Identifiable {
-    var id: Int
+    var id: UInt
     var name: String
-    var otherNames: [String]
-    var description: String
+//    var otherNames: [String]
+//    var description: String
     
     var elevation: Double
-    var prominence: Double
-    var isolation: Double
-    
-    var location: String
-    var range: String
+//    var prominence: Double
+//    var isolation: Double
+//
+//    var location: String
+//    var range: String
 //    private var coordinates: Coordinates
 //    var locationCoordinate: CLLocationCoordinate2D {
 //        CLLocationCoordinate2D(
@@ -30,19 +30,20 @@ struct Mountain: Hashable, Codable, Identifiable {
 //        var latitude: Double
 //        var longitude: Double
 //    }
-    
-    var routes: [Route]
-    
-    struct Route: Hashable, Codable {
-        var name: String
-        var otherNames: [String]
-        var description: String
-        
-        var stops: [Stop]
-    }
-    
-    struct Stop: Hashable, Codable {
-        var name: String
-        var elevation: Double
-    }
+//
+//    var routes: [Route]
+//
+//    struct Route: Hashable, Codable {
+//        var name: String
+//        var otherNames: [String]
+//        var description: String
+//
+//        var stops: [Stop]
+//    }
+//
+//    struct Stop: Hashable, Codable {
+//        var name: String
+//        var elevation: Double
+//    }
+    static let `default` = Mountain(id: UInt.max, name: "Mountain Name", elevation: 1234.56)
 }
