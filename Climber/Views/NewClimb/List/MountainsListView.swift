@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct MountainsListView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var modelData: ModelData
+    
     @State private var searchText = ""
     @State private var currentlySearching = false
-    
     @State private var sort: Sort = .alphabetical
     enum Sort {
         case alphabetical
         case elevation
         case new
     }
-    
-    
     var searchResults: [Mountain] {
         modelData.mountains
             .filter { mountain in
@@ -38,62 +38,75 @@ struct MountainsListView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            VStack {
-                HStack {
+        NavigationView {
+            VStack(spacing: 0) {
+                VStack {
                     HStack {
-                        Image(systemName: "magnifyingglass")
-                        
-                        TextField(
-                            "Search",
-                            text: $searchText,
-                            onEditingChanged: { _ in
-                                currentlySearching = true
-                                
-                            },
-                            onCommit: {
-                                currentlySearching = false
-                                
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                            
+                            TextField(
+                                "Search",
+                                text: $searchText,
+                                onEditingChanged: { _ in
+                                    currentlySearching = true
+                                    
+                                },
+                                onCommit: {
+                                    currentlySearching = false
+                                    
+                                }
+                            )
+                            .autocapitalization(.words)
+                            .foregroundColor(.primary)
+                            
+                            Button(action: {
+                                searchText = ""
+                            }) {
+                                Image(systemName: "xmark.circle.fill").opacity(searchText == "" ? 0 : 1)
                             }
-                        )
-                        .autocapitalization(.words)
-                        .foregroundColor(.primary)
-                        
-                        Button(action: {
-                            searchText = ""
-                        }) {
-                            Image(systemName: "xmark.circle.fill").opacity(searchText == "" ? 0 : 1)
                         }
+                        .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))
+                        .foregroundColor(.secondary)
+                        .background(Color(.secondarySystemBackground))
+                        .cornerRadius(10.0)
                     }
-                    .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))
-                    .foregroundColor(.secondary)
-                    .background(Color(.secondarySystemBackground))
-                    .cornerRadius(10.0)
+                    
+                    Picker("Sort", selection: $sort) {
+                        Text("A → Z").tag(Sort.alphabetical)
+                        Text("Elevation").tag(Sort.elevation)
+                        Text("Newly Added").tag(Sort.new)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    
+                    Text("\(searchResults.count) Mountain\(searchResults.count != 1 ? "s" : "")")
+                        .font(.footnote)
+                        .fontWeight(.bold)
+                        .textCase(.uppercase)
+                        .foregroundColor(.secondary)
                 }
+                .padding([.top, .leading, .trailing])
+                .padding(.bottom, 6)
                 
-                Picker("Sort", selection: $sort) {
-                    Text("A → Z").tag(Sort.alphabetical)
-                    Text("Elevation").tag(Sort.elevation)
-                    Text("Newly Added").tag(Sort.new)
+                Divider()
+                
+                // TODO: Fix NavigationLink cell in List stays highlighted after detail pop
+                List(searchResults) { mountain in
+                    NavigationLink(destination: MountainDetailView(mountain: mountain)) {
+                        MountainsRowView(mountain: mountain)
+                    }
+                    .tag(mountain)
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                
-                Text("\(searchResults.count) Mountain\(searchResults.count != 1 ? "s" : "")")
-                    .font(.footnote)
-                    .fontWeight(.bold)
-                    .textCase(.uppercase)
-                    .foregroundColor(.secondary)
             }
-            .padding([.top, .leading, .trailing])
-            .padding(.bottom, 6)
-            
-            Divider()
-            
-            List(searchResults) { mountain in
-                NavigationLink(destination: MountainDetailView(mountain: mountain)) {
-                    MountainsRowView(mountain: mountain)
-                }
-            }.animation(.easeInOut)
+            .navigationBarTitle("All Mountains")
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Cancel")
+                    }
+            )
         }
     }
 }

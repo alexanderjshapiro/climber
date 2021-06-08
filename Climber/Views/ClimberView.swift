@@ -83,7 +83,6 @@ struct NewClimbButton: View {
                     }
                 }
             }
-            Spacer()
         }
     }
 }

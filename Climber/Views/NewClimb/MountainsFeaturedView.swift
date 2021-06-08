@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct MountainsFeaturedView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
-        Text("MountainsFeaturedView")
+        NavigationView {
+            Text("MountainsFeaturedView")
+                .navigationBarTitle("Featured")
+                .navigationBarItems(
+                    leading:
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Text("Cancel")
+                        }
+                )
+        }
     }
 }
 

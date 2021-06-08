@@ -23,14 +23,15 @@ struct NewClimbView: View {
                     Label("Featured", systemImage: "star")
                 }
                 .tag(Tab.featured)
+                .navigationBarHidden(true)
             
             MountainsListView(modelData: modelData)
                 .tabItem {
                     Label("List", systemImage: "list.bullet")
                 }
                 .tag(Tab.list)
+                .navigationBarHidden(true)
         }
-        .navigationBarTitle(Text("Select a Mountain"), displayMode: .inline)
     }
 }
 
