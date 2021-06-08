@@ -18,7 +18,7 @@ struct NewClimbView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            MountainsFeaturedView()
+            MountainsFeaturedView(modelData: modelData)
                 .tabItem {
                     Label("Featured", systemImage: "star")
                 }

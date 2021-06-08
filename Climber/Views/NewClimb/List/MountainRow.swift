@@ -1,5 +1,5 @@
 //
-//  MountainsRowView.swift
+//  MountainRow.swift
 //  Climber
 //
 //  Created by Alexander Shapiro on 6/8/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MountainsRowView: View {
+struct MountainRow: View {
     var mountain: Mountain
     
     var body: some View {
@@ -42,9 +42,9 @@ struct MountainsRowView: View {
     }
 }
 
-struct MountainsRowView_Previews: PreviewProvider {
+struct MountainRow_Previews: PreviewProvider {
     static var previews: some View {
-        MountainsRowView(mountain: Mountain.default)
+        MountainRow(mountain: Mountain.default)
             .previewLayout(.fixed(width: 400, height: 100))
     }
 }

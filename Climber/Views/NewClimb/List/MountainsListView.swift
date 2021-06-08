@@ -93,7 +93,7 @@ struct MountainsListView: View {
                 // TODO: Fix NavigationLink cell in List stays highlighted after detail pop
                 List(searchResults) { mountain in
                     NavigationLink(destination: MountainDetailView(mountain: mountain)) {
-                        MountainsRowView(mountain: mountain)
+                        MountainRow(mountain: mountain)
                     }
                     .tag(mountain)
                 }
