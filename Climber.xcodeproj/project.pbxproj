@@ -40,12 +40,12 @@
 		69ABBEAD25B66BE5000B0303 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ABBEAC25B66BE5000B0303 /* HealthKit.framework */; };
 		69B2DA41266E223A002EC0EE /* MountainsFeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B2DA40266E2236002EC0EE /* MountainsFeaturedView.swift */; };
 		69B2DA43266E2241002EC0EE /* MountainsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B2DA42266E2241002EC0EE /* MountainsListView.swift */; };
-		69B2DA47266E3935002EC0EE /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B2DA44266E3935002EC0EE /* RoundedCorner.swift */; };
-		69B2DA48266E3935002EC0EE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B2DA45266E3935002EC0EE /* UIColorExtension.swift */; };
-		69B2DA49266E3935002EC0EE /* EffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B2DA46266E3935002EC0EE /* EffectView.swift */; };
 		69D1BE842665875300415D8F /* ProfileSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1BE832665875300415D8F /* ProfileSheetView.swift */; };
 		69D1BE8726659E0A00415D8F /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1BE8626659E0A00415D8F /* HelpView.swift */; };
 		69D1BE8926659E1000415D8F /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1BE8826659E1000415D8F /* AboutView.swift */; };
+		69F8A59E2674FD7F008297D0 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8A59B2674FD7F008297D0 /* RoundedCorner.swift */; };
+		69F8A59F2674FD7F008297D0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8A59C2674FD7F008297D0 /* UIColorExtension.swift */; };
+		69F8A5A02674FD7F008297D0 /* EffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8A59D2674FD7F008297D0 /* EffectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,12 +87,12 @@
 		69ABBEAC25B66BE5000B0303 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		69B2DA40266E2236002EC0EE /* MountainsFeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainsFeaturedView.swift; sourceTree = "<group>"; };
 		69B2DA42266E2241002EC0EE /* MountainsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainsListView.swift; sourceTree = "<group>"; };
-		69B2DA44266E3935002EC0EE /* RoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedCorner.swift; path = Climber/Views/Info/BottomSheet/HelperViews/RoundedCorner.swift; sourceTree = SOURCE_ROOT; };
-		69B2DA45266E3935002EC0EE /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = Climber/Views/Info/BottomSheet/HelperViews/UIColorExtension.swift; sourceTree = SOURCE_ROOT; };
-		69B2DA46266E3935002EC0EE /* EffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EffectView.swift; path = Climber/Views/Info/BottomSheet/HelperViews/EffectView.swift; sourceTree = SOURCE_ROOT; };
 		69D1BE832665875300415D8F /* ProfileSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSheetView.swift; sourceTree = "<group>"; };
 		69D1BE8626659E0A00415D8F /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		69D1BE8826659E1000415D8F /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		69F8A59B2674FD7F008297D0 /* RoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		69F8A59C2674FD7F008297D0 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		69F8A59D2674FD7F008297D0 /* EffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,19 +161,9 @@
 				693560AD266E1D0400F2E9A0 /* ViewExtension.swift */,
 				693560AE266E1D0400F2E9A0 /* .gitignore */,
 				693560AF266E1D0400F2E9A0 /* LICENSE.txt */,
-				693560B0266E1D0400F2E9A0 /* Helpers */,
+				69F8A59A2674FD7F008297D0 /* Helpers */,
 			);
 			path = BottomSheet;
-			sourceTree = "<group>";
-		};
-		693560B0266E1D0400F2E9A0 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				69B2DA46266E3935002EC0EE /* EffectView.swift */,
-				69B2DA44266E3935002EC0EE /* RoundedCorner.swift */,
-				69B2DA45266E3935002EC0EE /* UIColorExtension.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		6955E81E25B63495007898C4 = {
@@ -278,6 +268,16 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		69F8A59A2674FD7F008297D0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				69F8A59B2674FD7F008297D0 /* RoundedCorner.swift */,
+				69F8A59C2674FD7F008297D0 /* UIColorExtension.swift */,
+				69F8A59D2674FD7F008297D0 /* EffectView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -358,7 +358,6 @@
 				69B2DA41266E223A002EC0EE /* MountainsFeaturedView.swift in Sources */,
 				693560B6266E1D0400F2E9A0 /* AbandonButtonView.swift in Sources */,
 				695F4261266ED20A00A04C7E /* MountainRow.swift in Sources */,
-				69B2DA49266E3935002EC0EE /* EffectView.swift in Sources */,
 				695722652665C7A8002A2797 /* LicensesView.swift in Sources */,
 				693560B8266E1D0400F2E9A0 /* BottomSheet.swift in Sources */,
 				69D1BE8926659E1000415D8F /* AboutView.swift in Sources */,
@@ -366,14 +365,16 @@
 				69ABBEA325B66B12000B0303 /* ModelData.swift in Sources */,
 				69B2DA43266E2241002EC0EE /* MountainsListView.swift in Sources */,
 				693560BB266E1D0400F2E9A0 /* ViewExtension.swift in Sources */,
-				69B2DA48266E3935002EC0EE /* UIColorExtension.swift in Sources */,
 				6955E82B25B63495007898C4 /* ClimberApp.swift in Sources */,
 				6957226B2665CA92002A2797 /* ClimberBackgroundView.swift in Sources */,
+				69F8A59E2674FD7F008297D0 /* RoundedCorner.swift in Sources */,
 				693560B5266E1D0400F2E9A0 /* DetailsView.swift in Sources */,
 				695722672665C7B7002A2797 /* SpecialThanksView.swift in Sources */,
 				693560B7266E1D0400F2E9A0 /* BottomSheetPosition.swift in Sources */,
 				695722612665C77A002A2797 /* TermsOfServiceView.swift in Sources */,
+				69F8A59F2674FD7F008297D0 /* UIColorExtension.swift in Sources */,
 				690D07AA2664CBC6005CB8E1 /* Mountain.swift in Sources */,
+				69F8A5A02674FD7F008297D0 /* EffectView.swift in Sources */,
 				6998214725F60EC4009A0DD5 /* ContentView.swift in Sources */,
 				693560BA266E1D0400F2E9A0 /* BottomSheetView.swift in Sources */,
 				6957225E2665C061002A2797 /* ProfileView.swift in Sources */,
@@ -381,7 +382,6 @@
 				6957225C2665BCEE002A2797 /* ProfileInfo.swift in Sources */,
 				690D07AC2664CC3E005CB8E1 /* Profile.swift in Sources */,
 				69D1BE842665875300415D8F /* ProfileSheetView.swift in Sources */,
-				69B2DA47266E3935002EC0EE /* RoundedCorner.swift in Sources */,
 				693560A3266E18F500F2E9A0 /* Climb.swift in Sources */,
 				693560C2266E1F0A00F2E9A0 /* NewClimbView.swift in Sources */,
 				69D1BE8726659E0A00415D8F /* HelpView.swift in Sources */,

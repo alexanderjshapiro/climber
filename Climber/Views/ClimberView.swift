@@ -22,19 +22,19 @@ struct ClimberView: View {
             }
             .bottomSheet(
                 bottomSheetPosition: $bottomSheetPosition,
-                options: [.notResizeable],
+                options: [.animation(Animation.spring(response: 0.3, dampingFraction: 0.75, blendDuration: 1)), .appleScrollBehavior],
                 headerContent: {
-                    if (modelData.profile.climb != nil) {
+//                    if (modelData.profile.climb != nil) {
                         SummaryView()
-                    } else {
-                        NewClimbButton(modelData: modelData)
-                    }
+//                    } else {
+//                        NewClimbButton(modelData: modelData)
+//                    }
                 },
                 mainContent: {
-                    if (modelData.profile.climb != nil) {
+//                    if (modelData.profile.climb != nil) {
                         DetailsView()
                             .opacity(bottomSheetPosition == BottomSheetPosition.bottom ? 0 : 1)
-                    }
+//                    }
                 }
             )
             .navigationBarHidden(true)
